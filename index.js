@@ -105,4 +105,50 @@ const team = [
   { id: 122, name: "Kowalski", pillot: false }
 ]
 
-console.log(team.some(person => person.pillot));
+//console.log(team.some(person => person.pillot));
+
+/* ======================================================================
+  find() quando é preciso procurar/verificar por um valor dentro de um array obj, sendo que esse retorno será do primeiro elemento que satisfazer o teste.
+  ====================================================================== */
+
+  const pizzas = [
+    "mussarela",
+    "calabresa",
+    "portuguesa",
+    "marguerita"
+  ];
+
+  const foundPizza = pizzas.find(p => p.startsWith("m"));
+
+  //console.log(foundPizza);
+
+  // Frutas
+
+  const frutas = [
+    {name: "jaca", quantity: 2},
+    {name: 'banana', quantity: 0},
+    {name: "cereja", quantity: 5}
+  ]
+
+  const foundFruit = frutas.find(p => p.name === 'cereja');
+  //console.log(foundFruit);
+
+  /* ======================================================================
+  includes() quando for preciso saber se um array obj possui determinado valor ou elemento - retorna um booleano
+  ====================================================================== */
+
+//console.log( [1,2,3].includes(2) );
+const people = [ 'Adamastor', 'Joana', 'Mauricio', 'Lalau'];
+
+console.log(people.includes('Adamastor'));
+
+const peoples = [
+  {id: 11, name: "Adamastor", age: 23, group: "editor"},
+  {id: 47, name: "Joana", age: 28, group: "user"},
+  {id: 85, name: "Mauricio", age: 34, group: "editor"},
+  {id: 97, name: "Lalau", age: 74, group: "admin"}
+]
+
+const filteredUsers = peoples.filter( p => p.name.includes('au') );
+
+console.log(filteredUsers);
